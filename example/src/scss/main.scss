@@ -1,0 +1,7 @@
+@import 'normalize';
+@import 'components/colors'; 
+
+.is-active {
+    background-color: $colorBlue;
+    color: white;
+}
