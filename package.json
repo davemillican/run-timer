@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run build:js && npm run build:css",
     "watch:js": "watchify src/js/main.js -o build/bundle.js",
-    "watch:css": "sass --watch src/scss:build/css",
+    "watch:css": "sass --watch src/scss:build",
     "watch": "npm run watch:js & npm run watch:css",
     "build:js":"browserify src/js/main.js -o build/bundle.js",
     "build:css":"sass src/scss/main.scss build/main.css",

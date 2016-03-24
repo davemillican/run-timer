@@ -6,26 +6,22 @@ var Backbone = require ('backbone');
 var RaceModel = require ('./RaceModel.js');
 var DetailView = require ('./DetailView.js');
  
-ListView = Backbone.View.extend ({
+var ListView = Backbone.View.extend ({
+
+    className: 'list-view',
 
     template: _.template (
-        `<div>ListView
-            <div class="detail-item"></div>
-            <button>Create</button>
-        </div>`
+        `<div class='title-bar'>Run Timer</div>
+         <div class="detail-item"></div>
+         <div class="button-holder"></div>`
         ),
 
     events: {
-        'click ': 'onClickDetail',
         'click button': 'onClickButton'
     },
 
-    onClickDetail: function () {
-        alert("Detail click");
-    },
-
     onClickButton: function () {
-        alert('button click')
+        window.location.hash = 'create'
     },
 
     initialize: function () {
@@ -36,6 +32,7 @@ ListView = Backbone.View.extend ({
 
     render: function () {
         var localView;
+        var _this = this;
 
         //ERROR!!!!! the following is never going to happen.
         //  The last listView was removed.  This new listView
@@ -51,8 +48,12 @@ ListView = Backbone.View.extend ({
             localView = new DetailView ({model: model});
             //this.children.push(localView);
             localView.render();
-            $('.detail-view').append(localView.$el);
+            _this.$('.detail-item').append(localView.$el);
         });
+
+        var button = $('<button>').html('Button');
+        button.addClass('create-button');
+        this.$('.button-holder').append(button);
     }
 });
 

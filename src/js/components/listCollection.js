@@ -6,7 +6,7 @@ var data = [
     {id: 3, date:"7/2/16", time:"10:15", notes:"third test"}
 ];
 
-appCollection = new Backbone.Collection(data);
+var appCollection = new Backbone.Collection(data);
 
 appCollection.nextID = data.length + 1;
 

@@ -4,23 +4,34 @@ var Backbone = require('backbone');
 
 var ExpandedView = Backbone.View.extend({
 
+    className: 'expanded-view',
+    events: {
+        'click button': 'onClick'
+    },
+
+    onClick: function () {
+        window.location.hash = '';
+    },
+
     template: _.template(
-        `<div class='title'></div>
-         <div>
-            <span>Date</span>
-            <%= get('date') %>
+        `<div class='title-bar'>Run Timer</div>
+         <div class="line-item">
+            <span>Date: </span>
+            <span><%= get('date') %></span>
          </div>
-         <div>
-            <span>Time></span>
-            <%= get('time') %>
+         <div class="line-item">
+            <span>Time: </span>
+            <span><%= get('time') %></span>
          </div>
-         <div>
-            <span>Notes</span>
-         </div>`
+         <div class="line-item">
+            <span>Notes: </span>
+            <span><%= get('notes') %></span>
+         </div>
+         <button>Exit</button>`
     ),
 
     render: function () {
-        this.$el.html(template( this.model ));       
+        this.$el.html(this.template( this.model ));       
     }
 });
 

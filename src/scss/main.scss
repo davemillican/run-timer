@@ -1,6 +1,108 @@
-.detail-item {
-    height: 200px;
-    * {
-        color: red;
-      }
+@import 'components/normalize';
+@import 'components/variables';
+
+
+.cf:after {
+    content:'';
+    clear: both;
+    display: block;
 }
+
+
+body * {
+    box-sizing:border-box;
+    font-family:roboto, sans-serif;
+    line-height: 18px;
+    background-color: $appBackground;
+    color: $regularText;
+
+}
+
+h2 {
+    padding-left: 20px;
+}
+
+input {
+    background-color: $appBackground;
+    color: $inputText;
+    display: block;
+    border: 0;
+    border-bottom: 2px solid $placeHolderText;
+    height: 60px;
+    padding: 15px;
+    margin-left: 15px;
+    width: 90%;
+
+}
+
+button {
+    background-color: $buttonGreen;
+}
+
+#app-dock {
+    width: 700px;
+}
+.detail-item {
+    height: 70%;
+}
+ 
+span {
+    padding-top: 20px;
+} 
+
+.date {
+    float:left;
+}
+
+.time {
+    float:right;
+}
+
+.expanded-view span {
+    font-size: 18px;
+    padding: 0;
+}
+
+
+.line-item {
+    height: 50px;
+    border-bottom: 2px solid $placeHolderText;
+    padding: 0 20px;
+    font-size: 2.7em;
+}
+.title-bar {
+    background-color: $headerBarBlue;
+    color: $titleWhite;
+    height: 100px;
+    padding-top: 40px;
+    padding-left: 40px;
+    font-size: 3em;
+}
+
+.list-view {
+    height: 700px;
+}
+
+.create-view {
+    height: 700px;
+}
+
+.submit-ok {
+    position: relative;
+    left: 550px;
+    top: 300px;
+
+}
+
+.create-button {
+    float: right;
+    margin-right: 50px;
+    border-radius: 40px;
+    height: 80px;
+    width:  80px;
+}
+
+.button-holder {
+    height: 50px;
+}
+

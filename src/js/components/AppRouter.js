@@ -9,7 +9,7 @@ var ExpandedView = require ('./expandedView.js');
 var CreateView = require ('./CreateView.js');
 var listCollection = require ('./ListCollection.js')
 
-AppRouter = Backbone.Router.extend ({
+var AppRouter = Backbone.Router.extend ({
     routes: {
         '': 'list',
         'expand': 'alertError',
